@@ -1,6 +1,6 @@
 var budget = +prompt("Бюжет Вашего магазина?", "");
 var nameMagazin = prompt("Название Вашего магазина?", "");
-mainList = {
+let mainList = {
 	budget,
 	nameMagazin,
 	open: "Открыто",
@@ -11,10 +11,10 @@ mainList = {
 		sotr3: "Николай"
 				}
 };
-var budden = (budget/30);
-alert(budden);
-console.log(budget);
+/*var budden = (budget/30);*/
+alert(budget/30);
+/*console.log(budget);
 console.log(nameMagazin);
 console.log(open);
-console.log(nameMagazin);
+console.log(nameMagazin);*/
 console.log(mainList);
