@@ -62,7 +62,7 @@ console.log(mainList.budget/30);
 budgetDay();
 
 function discYN() {
-		if(mainList.discount = true) {
+		if(mainList.discount == true) {
 			price = 80;
 			} else {
 				price = 100;
@@ -73,12 +73,12 @@ discYN();
 console.log(price);
 
 function naimyploet () {
-	let sotr1 = prompt("Введите номер сотрудника", "");
-		sotr1 = sotr1 + ' - ' + (prompt("Введите Имя сотрудника", ""))+',';
-	let sotr2 = prompt("Введите номер сотрудника", "");
-		sotr2 = sotr2 + ' - ' + (prompt("Введите Имя сотрудника", ""))+',';
-	let sotr3 = prompt("Введите номер сотрудника", "");
-	sotr3 = sotr3 + ' - ' + (prompt("Введите Имя сотрудника", ""));
+	let sotr1 = prompt("Введите номер сотрудника1", "");
+		sotr1 = sotr1 + ' - ' + (prompt("Введите Имя сотрудника1", ""))+',';
+	let sotr2 = prompt("Введите номер сотрудника2", "");
+		sotr2 = sotr2 + ' - ' + (prompt("Введите Имя сотрудника2", ""))+',';
+	let sotr3 = prompt("Введите номер сотрудника3", "");
+	sotr3 = sotr3 + ' - ' + (prompt("Введите Имя сотрудника3", ""));
 	let a = sotr1 + sotr2 + sotr3;
 	if ((typeof(a)) === 'string' && (typeof(a)) !== null && a != '' && a.length < 50) {
 		mainList.employers = a;
