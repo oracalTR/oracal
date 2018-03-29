@@ -1,4 +1,4 @@
-var money = +prompt("Бюжет Вашего магазина?", "");
+/*var money = +prompt("Бюжет Вашего магазина?", "");
 var name = prompt("Название Вашего магазина?", "");
 let time = 24;
 let mainList = {
@@ -18,7 +18,7 @@ for (i=0; i<3; i++) {
 		alert('Ошибка! Наименование не может быть пустым!');
 		i--;
 	}
-}
+}*/
 
 /*let i = 0;
 while (i < 3) {
@@ -46,7 +46,7 @@ do {
 while (i < 3)*/
 
 
-if (time <= 0) {
+/*if (time <= 0) {
 	console.log('Такого просто не может быть');
 	} else if (time > 8 && time < 20) {
 		console.log('Время работать');
@@ -58,4 +58,7 @@ if (time <= 0) {
 
 
 alert(mainList.budget/30);
-console.log(mainList);
+console.log(mainList);*/
+
+let week = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+alert(<b>week[0],  week[1]);
