@@ -1,0 +1,17 @@
+let menu = document.getElementsByClassName('menu-item');
+let addli = document.createElement('li');
+list.removeChild(list.children[1], list.children[2]);
+addli.innerHTML = "Третий пункт";
+addli.classList.add('menu-item');
+list.insertBefore(addli, list.children[2]);
+addli = document.createElement('li');
+addli.innerHTML = 'Пятый пункт';
+addli.classList.add('menu-item');
+list.insertBefore(addli, list.children[4]);
+document.body.style.backgroundImage = 'url(../img/apple_true.jpg)';
+document.getElementById('title').innerHTML = 'Мы продаем только подлинную технику Apple';
+let div = document.querySelectorAll('div')[3];
+div.parentNode.removeChild(div);
+let apple = prompt ("Каково Ваше отношение к технике apple?", "");
+document.getElementById('prompt').innerHTML = apple;
+console.log(div);

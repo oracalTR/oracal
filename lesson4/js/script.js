@@ -25,10 +25,8 @@ let mainList = {
 	shopGoods: [],
 	employers: {},
 	open: false,
-	discount: true
-}
-
-function chooseGoods () {		
+	discount: true,
+	chooseGoods: function chooseGoods () {		
 		for (let i=0; i<3; i++) {
 			let a = prompt("Введите наименование товара", "");
 			/*if ((typeof(a)) === 'string' && (typeof(a)) !== null && a != '' && a.length < 50 && (parseInt(a)) === 'string') {
@@ -39,65 +37,57 @@ function chooseGoods () {
 						a = prompt("Введите наименование товара?", "");
 						}
 						mainList.shopGoods[i] = a;
-		}
-}
-chooseGoods();
-
-
-function workTime(time) {
-if (time <= 0) {
-	console.log('Такого просто не может быть');
-	} else if (time > 8 && time < 20) {
-		console.log('Время работать');
-		} else if (time >= 20 && time <= 24 || time < 8) {
-			console.log('Уже слишком поздно');
-			} else if (time > 24) {
-				console.log('В сутках только 24 часа');
 				}
-}
-workTime(9);
-
-function budgetDay() {
-alert(mainList.budget/30);
-console.log(mainList.budget/30);
-}
-budgetDay();
-
-function discYN() {
+				/*mainList.shopGoods.push(prompt("Хотите добавить еще", ""));*/
+				mainList.shopGoods.sort();
+		},
+	workTime: function workTime(time) {
+	if (time <= 0) {
+		console.log('Такого просто не может быть');
+		} else if (time > 8 && time < 20) {
+			console.log('Время работать');
+			} else if (time >= 20 && time <= 24 || time < 8) {
+				console.log('Уже слишком поздно');
+				} else if (time > 24) {
+					console.log('В сутках только 24 часа');
+					}
+		},
+	budgetDay: function budgetDay() {
+		alert(mainList.budget/30);
+		console.log(mainList.budget/30);
+		},
+	discYN: function discYN() {
 		if(mainList.discount == true) {
 			price = 80;
 			} else {
 				price = 100;
 			}
-}
-discYN();
-
-console.log(price);
-
-function naimyploet () {
-	let sotr1 = prompt("Введите номер сотрудника1", "");
-		sotr1 = sotr1 + ' - ' + (prompt("Введите Имя сотрудника1", ""))+',';
-	let sotr2 = prompt("Введите номер сотрудника2", "");
-		sotr2 = sotr2 + ' - ' + (prompt("Введите Имя сотрудника2", ""))+',';
-	let sotr3 = prompt("Введите номер сотрудника3", "");
-	sotr3 = sotr3 + ' - ' + (prompt("Введите Имя сотрудника3", ""));
-	let a = sotr1 + sotr2 + sotr3;
-	if ((typeof(a)) === 'string' && (typeof(a)) !== null && a != '' && a.length < 50) {
-		mainList.employers = a;
-	} else {
-		console.log('Ошибка! Наименование не может быть пустым!');
-		alert('Ошибка! Наименование не может быть пустым!');
-			}			
+		},
+	naimyploet: function naimyploet () {
+		let sotr1 = prompt("Введите номер сотрудника1", "");
+			sotr1 = sotr1 + ' - ' + (prompt("Введите Имя сотрудника1", ""))+',';
+		let sotr2 = prompt("Введите номер сотрудника2", "");
+			sotr2 = sotr2 + ' - ' + (prompt("Введите Имя сотрудника2", ""))+',';
+		let sotr3 = prompt("Введите номер сотрудника3", "");
+		sotr3 = sotr3 + ' - ' + (prompt("Введите Имя сотрудника3", ""));
+		let a = sotr1 + sotr2 + sotr3;
+		if ((typeof(a)) === 'string' && (typeof(a)) !== null && a != '' && a.length < 50) {
+			mainList.employers = a;
+		} else {
+			console.log('Ошибка! Наименование не может быть пустым!');
+			alert('Ошибка! Наименование не может быть пустым!');
+				}			
+		}
 }
 
-naimyploet();
 
-for (let key in mainList) {
+
+/*for (let key in mainList) {
 	alert('Наш магазин включает в себя: ' + key + ' Имеет значение: ' + mainList[key]);
 }
 
 mainList.shopGoods.forEach(function (item) {
  alert("У нас вы можете купить: " + item)
-})
+})*/
 
 console.log(mainList);
