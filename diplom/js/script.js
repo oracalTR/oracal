@@ -21,7 +21,10 @@ window.addEventListener('DOMContentLoaded', function () {
 			mainCardsActive = document.getElementsByClassName('main-cards-item'),
 			crime = document.getElementById('crime'),
 			arr = [],
-			customInfo = document.getElementsByClassName('custom-info')[0];
+			customInfo = document.getElementsByClassName('custom-info')[0],
+			personDiv = 'photo photo-1';
+			
+
 
 		
 			let vz = 'Либеральные';
@@ -35,7 +38,6 @@ window.addEventListener('DOMContentLoaded', function () {
 					} 
 			});
 			console.log(resultGolos);
-
 	
 
 
@@ -47,22 +49,6 @@ window.addEventListener('DOMContentLoaded', function () {
 			customChildKand[3].style.display = 'block';
 			customChildKand[5].style.display = 'block';
 			
-			
-			//Анимация OLD
-			/*var start = Date.now(); // сохранить время начала
-
-      var timer = setInterval(function() {
-        // вычислить сколько времени прошло из opts.duration
-        var timePassed = Date.now() - start;
-
-        customChildKand[1].style.top = timePassed / 5 + 'px';
-
-        if (timePassed > 100) clearInterval(timer);
-         console.log(customChildKand[1]); 
-
-      }, 1000);
-*/
-      //Анимация OLD
 
 		function myAnimation() {
 		      let pos = 0,
@@ -83,39 +69,94 @@ window.addEventListener('DOMContentLoaded', function () {
 			  
 		});
 
+		//Slider
+	
+		let slideIndex = 0,
+		slides = document.getElementsByClassName('slider-item'),
+		prev = document.getElementsByClassName('prev')[0],
+		next = document.getElementsByClassName('next')[0];
+		person = document.getElementsByClassName('person-easy')[0];
+		slides[0].style.display = 'block'
+		console.log(slides);
+		console.log(person);
+
+		prev.addEventListener('click', moveLeft);
+			function moveLeft() {
+				prev.style.display = 'block';
+				slides[1].style.display = 'none';
+				slides[0].style.display = 'block';
+				man.checked = 'checked';
+				girl.checked = '';
+				man.value = 'Мужкой';
+				girl.value = '';
+				personDiv = 'photo photo-1';
+			}
+
+		next.addEventListener('click', moveRigth);
+			function moveRigth() {
+				next.style.display = 'block';
+				slides[0].style.display = 'none';
+				slides[1].style.display = 'block';
+				man.checked = '';
+				girl.checked = 'checked';
+				man.value = '';
+				girl.value = 'Женский';
+				personDiv = 'photo photo-2';
+	
+			}
+
+
+		
+		//End slider
+
 		man.addEventListener('click', function() {
 			man.value = 'Мужкой';
 			girl.value = '';
+			slides[1].style.display = 'none';
+			slides[0].style.display = 'block';
+			personDiv = 'photo photo-1';
 		});
 
 		girl.addEventListener('click', function() {
 			man.value = '';
 			girl.value = 'Женский';
+			slides[0].style.display = 'none';
+			slides[1].style.display = 'block';
+			personDiv = 'photo photo-2';
+
 		});
 
 		
 		ready.addEventListener('click', function() {
-			main.style.display = 'block';
-			customKand.style.display = 'none';
-			div.classList.add('main-cards-item');
-			div.innerHTML = '<div class="candidate-block"><div class="photo photo-1"></div><div class="result"><div class="result-count"></div><div class="progress"><div class="progress-bar progress-bar-2"></div></div></div></div><div class="name">'+nameFIO.value+'</div><div class="age">'+age.value+'</div>Пол:<div class="sex">'+man.value+female.value+'</div>Полит. взгляды:<div class="views">'+vz+'</div>Биография<div class="bio">'+bio.value+'</div>';
-			mainCards[0].appendChild(div);
-			progresBar[0].classList.remove('progress-bar-1');
-			progresBar[0].classList.remove('progress-bar-2');
-			progresBar[0].classList.remove('progress-bar-3');
-			progresBar[1].classList.remove('progress-bar-1');
-			progresBar[1].classList.remove('progress-bar-2');
-			progresBar[1].classList.remove('progress-bar-3');
-			progresBar[2].classList.remove('progress-bar-1');
-			progresBar[2].classList.remove('progress-bar-2');
-			progresBar[2].classList.remove('progress-bar-3');
-			resultGolos[0].innerHTML = '%';
-			resultGolos[1].innerHTML = '%';
-			resultGolos[2].innerHTML = '%';
-			mainCardsActive[0].classList.remove('main-cards-item-active');
+			if (nameFIO.value == '' || age.value == '' || bio.value == '') {
+				
+				alert('Необходимо заполнить все поля для добавления Кандидата!');
+			} else {
+				main.style.display = 'block';
+				customKand.style.display = 'none';
+				div.classList.add('main-cards-item');
+				div.innerHTML = '<div class="candidate-block"><div class="'+personDiv+'"></div><div class="result"><div class="result-count"></div><div class="progress"><div class="progress-bar progress-bar-2"></div></div></div></div><div class="name">'+nameFIO.value+'</div><div class="age">'+age.value+'</div>Пол:<div class="sex">'+man.value+female.value+'</div>Полит. взгляды:<div class="views">'+vz+'</div>Биография<div class="bio">'+bio.value+'</div>';
+				mainCards[0].appendChild(div);
+				progresBar[0].classList.remove('progress-bar-1');
+				progresBar[0].classList.remove('progress-bar-2');
+				progresBar[0].classList.remove('progress-bar-3');
+				progresBar[1].classList.remove('progress-bar-1');
+				progresBar[1].classList.remove('progress-bar-2');
+				progresBar[1].classList.remove('progress-bar-3');
+				progresBar[2].classList.remove('progress-bar-1');
+				progresBar[2].classList.remove('progress-bar-2');
+				progresBar[2].classList.remove('progress-bar-3');
+				resultGolos[0].innerHTML = '%';
+				resultGolos[1].innerHTML = '%';
+				resultGolos[2].innerHTML = '%';
+				mainCardsActive[0].classList.remove('main-cards-item-active');
 				mainCardsActive[1].classList.remove('main-cards-item-active');
 				mainCardsActive[2].classList.remove('main-cards-item-active');
+				
+			}
 		});
+
+		
 
 		resetBtn.addEventListener('click', function() {
 
@@ -130,6 +171,9 @@ window.addEventListener('DOMContentLoaded', function () {
 			girl.checked = '';
 			man.value = 'Мужкой';
 			girl.value = '';
+			slides[1].style.display = 'none';
+			slides[0].style.display = 'block';
+			personDiv = 'photo photo-1';
 
 		});
 
@@ -381,6 +425,8 @@ window.addEventListener('DOMContentLoaded', function () {
 				progresBar[2].classList.add('progress-bar-4');
 			}
 
+		
+
 		resultGolos[0].innerHTML = arr[0]+'%';
 		resultGolos[1].innerHTML = arr[1]+'%';
 		resultGolos[2].innerHTML = arr[2]+'%';
@@ -390,6 +436,8 @@ window.addEventListener('DOMContentLoaded', function () {
 		console.log(arr[2]);
 
 	});
+
+
 		
 
 });

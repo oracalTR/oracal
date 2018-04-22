@@ -465,7 +465,7 @@
       .custom-style .prev:hover, .custom-style .next:hover {
         -webkit-box-shadow: 0 0 15px #2068df;
                 box-shadow: 0 0 15px #2068df; }
-    .custom-style .skin, .custom-style .hair, .custom-style .clothes {
+    .custom-style .skin, .custom-style .hair, .custom-style .clothes, .preview {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -574,5 +574,20 @@
       background: #aeaeae url(../img/clothes/slide/clothes-6.png) center no-repeat;
       background-size: 20%;
       border-radius: 10px; }
+    
+    .slider-item {
+      display: none;
+      height: 500px;
+      background: #fff center no-repeat;
+      background-size: 20%;
+      border-radius: 10px;
+    }
+
+    .slider-item img{
+      height: 50%;
+      padding: 10px;
+      margin-top: 120px;
+
+    }
 
 /*# sourceMappingURL=style.css.map */
